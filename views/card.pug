@@ -6,7 +6,8 @@ html(lang="en")
     header
         h1 #{title}
     section#content
-        h2= title
-        h4(description=title)
+        ul
+            each color in colors
+                li #{color}
     footer
-        p Dawson 2021
+        p sdf

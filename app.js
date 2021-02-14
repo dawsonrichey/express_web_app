@@ -2,6 +2,15 @@ const express = require('express');
 
 const app = express();
 
+const colors = [
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'blue',
+    'purple'
+  ];
+
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
@@ -12,12 +21,12 @@ app.get('/', (req, res) => {
 app.get('/cards', (req, res) => {
     res.locals.title = 'Card Page';
     // res.render('card', { prompt: "sdfsd" });
-    res.render('card');
+    res.render('card', {colors});
 });
 
 app.get('/staff', (req, res) => {
     res.locals.title = 'Staff Page';
-    res.render('staff');
+    res.render('staff', {colors});
 });
 
 app.get('/hello', (req, res) => {
